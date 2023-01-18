@@ -1,7 +1,7 @@
 import numpy as np
 import random
 
-class Solution:
+class Sorter:
     def bucketSort(self, A):
         min = A[0]
         max = A[0]
@@ -36,11 +36,16 @@ class Solution:
             randomList.append(temp)
         return randomList
 
+    def mainMenu(self):
+        numbers_to_sort = int(input("How many numbers would you like to generate to be sorted?"))
+        largest_number = int(input("What is max value you would like a random number to have?"))
+        array = self.generateRandom(self, numbers_to_sort, largest_number)
+        print(array)
+        print('-----------')
+        print('sorted')
+        answer = self.bucketSort(self, array)
 
 
+S = Sorter
+S.mainMenu(S)
 
-
-test = Solution()
-myArray = test.generateRandom(1000000, 1000)
-print(myArray)
-ans = test.bucketSort(myArray)
